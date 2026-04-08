@@ -204,19 +204,19 @@ Evaluation criteria used:
 ## Key Examples
 
 ### Example A - Successful Mutation
-Task: Code generation (HumanEval)
-Problem: HumanEval/29 (filter_by_prefix)
-Before prompt: Complete the below function.
-After prompt: You will be given a single HumanEval-style coding task with strict requirements to output one complete standalone function, preserve signature/type hints, include minimal typing imports when needed, and handle edge cases deterministically.
-What changed: Added explicit output contract, typing-import rule, anti-extraneous-output rules, and algorithmic guidance.
-Why it helped: Seed failures included MissingFunction/SyntaxError/NameError; mutation directly constrained those error modes.
-Score impact: Pass@1 0.796875 -> 1.0 (test), +13 additional solved problems.
+- Task: Code generation (HumanEval)
+- Problem: HumanEval/29 (`filter_by_prefix`)
+- Before prompt: Complete the below function.
+- After prompt: Added strict instructions to output one complete standalone function, preserve signature and type hints, include minimal typing imports, and handle edge cases deterministically.
+- What changed: Added explicit output contract, typing-import rule, anti-extraneous-output rules, and algorithmic guidance.
+- Why it helped: Seed failures included MissingFunction, SyntaxError, and NameError. The mutation directly constrained these error modes.
+- Score impact: Pass@1 0.796875 -> 1.0 (test), +13 additional solved problems.
 
 ### Example B - Failed Iteration (no improvement)
-Task: Code generation (HumanEval)
-Problem: Run 20251202_091121 (global run failure)
-What the reflector suggested: No successful mutation was persisted; num_candidates=1 and best_score remained 0.0.
-Why it didn't help: Seed prompt asked for only function body (not full function definition), which is incompatible with evaluator expectations for many tasks.
+- Task: Code generation (HumanEval)
+- Problem: Run 20251202_091121 (global run failure)
+- Reflector outcome: No successful mutation was persisted. `num_candidates=1` and `best_score=0.0`.
+- Why it did not help: The seed prompt asked for only a function body, not a full function definition, which is incompatible with evaluator expectations for many tasks.
 
 ### Example C - Reflector Output (Demonstration with GPT-4)
 
