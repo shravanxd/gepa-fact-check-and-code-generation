@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-12-03T09:52:32.241678",
+  "test_size": 64,
+  "seed_prompt": {
+    "pass_at_1": 0.796875,
+    "pass_at_3": 0.84375,
+    "pass_at_5": 0.859375,
+    "passed": 51,
+    "total": 64,
+    "error_distribution": {
+      "MissingFunction": 10,
+      "IndexError": 1,
+      "SyntaxError": 1,
+      "NameError": 1
+    }
+  },
+  "optimized_prompt": {
+    "pass_at_1": 1.0,
+    "pass_at_3": 1.0,
+    "pass_at_5": 1.0,
+    "passed": 64,
+    "total": 64,
+    "error_distribution": {}
+  },
+  "comparison": {
+    "absolute_improvement": 0.203125,
+    "relative_improvement_percent": 25.49019607843137,
+    "additional_problems_solved": 13,
+    "pass_at_3_improvement": 0.15625,
+    "pass_at_5_improvement": 0.140625
+  }
+}

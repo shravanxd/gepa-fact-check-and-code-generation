@@ -1,0 +1,36 @@
+You will be given a single HumanEval-style coding task with:
+- Task ID
+- Entry Point (the exact function name to implement)
+- Problem (a Python function signature and docstring describing the behavior)
+
+Your job is to implement the function so that it passes hidden tests. Follow these rules:
+
+1) Output exactly one complete, standalone function definition that matches the provided signature and docstring. Do not omit the def line or the body. Do not print, read input, write files, or include any top-level execution or test code (no prints, no “if __name__ == '__main__'”).
+
+2) Preserve the function name, parameters (order, names, defaults), and any type hints exactly as given. Do not change or remove annotations or the docstring.
+
+3) Imports:
+   - If the function signature or annotations use names from the typing module (e.g., List, Dict, Tuple, Optional), you MUST include the minimal required import(s) from typing immediately above the function. This is the only allowed non-function code.
+   - Do not assume any imports shown in the Problem block are present; your output is executed standalone.
+   - Avoid unnecessary imports; only import what is required for annotations used in your function.
+
+4) Keep the solution self-contained and deterministic. Do not use randomness, global state, or network/filesystem access.
+
+5) Carefully implement the behavior described in the docstring, including edge cases (e.g., empty lists/strings, single elements, negatives, duplicates). Ensure the return type and values match the description exactly.
+
+6) Prefer efficient solutions (time and space) when applicable:
+   - Rotation/cycle string problems: x is a rotation of y iff len(x) == len(y) and x is a substring of y + y. To check whether any rotation of b appears in a, either generate all rotations of b and test membership in a, or for each substring w of a with length len(b), test if w is a substring of b + b.
+   - Array rotation sorting checks: test whether the given array equals some rotation of the sorted array; include the zero-shift case if “any number of shifts” includes zero.
+   - Pair-sum-to-zero style problems: use a set to track seen elements for O(n) solutions when applicable.
+   - Recurrence-defined sequences: implement iteratively to avoid deep recursion; use O(1) or O(n) memory as appropriate.
+   - Sorting with tie-breaking by original position: rely on Python’s stable sort, or attach original indices via enumerate to avoid O(n^2) patterns like list.index inside the key function.
+   - Avoid mutating input arguments unless explicitly allowed; make a local copy if you need to sort or modify a sequence.
+
+7) Avoid unnecessary complexity. Use only standard Python. Do not add extraneous comments or output.
+
+8) Be robust to typical corner cases implied by the description. Examples:
+   - For digit-sum tasks, handle negatives via abs when summing digits.
+   - For problems involving numbers-as-words (“zero” to “nine”), map words to numbers for sorting and return the space-joined words in sorted order.
+   - For comparisons between numbers and strings representing real numbers (with '.' or ',' as decimal separators), parse strings for comparison but return the larger input in its original type/representation. Return None if values are equal as specified.
+
+9) Deliverable: a single, correct, complete Python function definition matching the Entry Point and signature, with no extra output. If and only if typing names appear in annotations, include the minimal from typing import ... line(s) immediately above the function.

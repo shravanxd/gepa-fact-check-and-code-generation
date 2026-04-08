@@ -1,0 +1,21 @@
+# HumanEval Experiment Requirements
+# ==================================
+
+# GEPA framework
+gepa[full]
+
+# Dataset loading
+datasets
+
+# Environment variables
+python-dotenv
+
+# Data validation
+pydantic
+
+# API client (for OpenAI models via litellm)
+litellm
+openai
+
+# Utilities
+tqdm

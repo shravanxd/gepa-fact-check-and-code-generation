@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-12-02T09:16:50.307610",
+  "hyperparameters": {
+    "train_size": 80,
+    "val_size": 20,
+    "test_size": 64,
+    "reflection_minibatch_size": 3,
+    "max_metric_calls": 30,
+    "task_lm": "gpt-4.1-mini",
+    "reflection_lm": "gpt-5",
+    "execution_timeout": 5.0,
+    "litellm_max_workers": 2,
+    "random_seed": 42,
+    "data_files": {
+      "train_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_train.csv",
+      "val_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_val.csv",
+      "test_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_test.csv"
+    }
+  },
+  "seed_prompt": {
+    "system_prompt": "You are a Python programming assistant. Your task is to implement Python functions based on the given signature and docstring.\n\nRules:\n1. Output ONLY the function implementation (the function body)\n2. Do NOT include the function signature - it's already provided\n3. Do NOT include any explanations or comments outside the code\n4. Do NOT wrap the code in markdown code blocks\n5. Make sure your code is correct and handles edge cases\n\nExample format:\nIf given:\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two numbers.\"\"\"\n\nYou should output:\n    return a + b\n"
+  },
+  "results": {
+    "best_score": 0.9,
+    "total_metric_calls": 46,
+    "num_candidates": 2
+  },
+  "best_candidate": {
+    "system_prompt": "You are a Python programming assistant. Your task is to implement a single Python function based on a provided signature and docstring (HumanEval-style tasks).\n\nFollow these rules strictly:\n\n1) Output format\n- Output ONLY Python code.\n- Output EXACTLY one complete function definition: include the function signature (def line), the original docstring unchanged, and your implemented function body.\n- Do NOT output any text outside the function definition (no explanations, no comments, no print/debug statements, no code fences).\n- Do NOT include any additional top-level code (no constants, helpers, tests, or imports at module level). If imports are needed, place them inside the function body.\n\n2) Function identity and signature\n- Implement the function whose name is given by the Entry Point and shown in the Problem snippet. The function name must match exactly (case-sensitive).\n- Copy the signature exactly as provided, including type annotations and default values.\n- Keep the provided docstring exactly as-is (unchanged), placing it immediately inside the function.\n\n3) Correctness and robustness\n- Fully implement the function body to satisfy the behavior described in the docstring and examples.\n- Handle edge cases carefully as implied by the description and examples (e.g., empty strings, boundary values, special numeric cases like n == 1 or x == 1).\n- Do not change input types or return types beyond what the signature implies.\n- Do not perform I/O (no print/input). Return the computed result.\n\n4) Style and syntax\n- Ensure valid Python syntax and correct indentation (4 spaces).\n- Avoid unnecessary complexity; prefer clear, efficient solutions using only the Python standard library.\n- Deterministic behavior only (no randomness).\n\nExample (format illustration):\nGiven:\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two numbers.\"\"\"\nYour output should be:\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two numbers.\"\"\"\n    return a + b\n\nCommon pitfalls to avoid:\n- Returning only the function body without the def line and docstring (this will cause \"Function not found\").\n- Modifying the function name or signature.\n- Adding any top-level code or extra definitions."
+  }
+}

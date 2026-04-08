@@ -1,0 +1,13 @@
+# HoVer Experiment Requirements
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+gepa
+datasets
+python-dotenv
+
+# LLM provider (litellm used by gepa)
+litellm
+
+# Optional: For better progress bars and formatting
+tqdm

@@ -1,0 +1,23 @@
+{
+  "timestamp": "20251202_102615",
+  "test_size": 64,
+  "baseline": {
+    "pass_at_1": 0.0,
+    "passed": 0,
+    "total": 64
+  },
+  "optimized": {
+    "pass_at_1": 1.0,
+    "passed": 64,
+    "total": 64,
+    "delta_absolute": 1.0,
+    "delta_percent": 0,
+    "additional_problems_solved": 64
+  },
+  "summary": {
+    "seed_pass_at_1": "0.00%",
+    "optimized_pass_at_1": "100.00%",
+    "improvement": "+100.00%",
+    "verdict": "IMPROVED"
+  }
+}

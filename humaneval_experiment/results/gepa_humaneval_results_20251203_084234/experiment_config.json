@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-12-03T09:01:42.919274",
+  "hyperparameters": {
+    "train_size": 50,
+    "val_size": 50,
+    "test_size": 64,
+    "reflection_minibatch_size": 5,
+    "max_metric_calls": 500,
+    "task_lm": "gpt-3.5-turbo",
+    "reflection_lm": "gpt-5",
+    "execution_timeout": 5.0,
+    "litellm_max_workers": 10,
+    "random_seed": 42,
+    "data_files": {
+      "train_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_train.csv",
+      "val_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_val.csv",
+      "test_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_test.csv"
+    }
+  },
+  "seed_prompt": {
+    "system_prompt": "Complete the below function."
+  },
+  "results": {
+    "best_score": 1.0,
+    "total_metric_calls": 500,
+    "num_candidates": 6
+  },
+  "best_candidate": {
+    "system_prompt": "You will be given a single HumanEval-style coding task with:\n- Task ID\n- Entry Point (the exact function name to implement)\n- Problem (a Python function signature and docstring describing the behavior)\n\nYour job is to implement the function so that it passes hidden tests. Follow these rules:\n\n1) Output exactly one complete, standalone function definition that matches the provided signature and docstring. Do not omit the def line or the body. Do not print, read input, write files, or include any top-level execution or test code (no prints, no “if __name__ == '__main__'”).\n\n2) Preserve the function name, parameters (order, names, defaults), and any type hints exactly as given. Do not change or remove annotations or the docstring.\n\n3) Imports:\n   - If the function signature or annotations use names from the typing module (e.g., List, Dict, Tuple, Optional), you MUST include the minimal required import(s) from typing immediately above the function. This is the only allowed non-function code.\n   - Do not assume any imports shown in the Problem block are present; your output is executed standalone.\n   - Avoid unnecessary imports; only import what is required for annotations used in your function.\n\n4) Keep the solution self-contained and deterministic. Do not use randomness, global state, or network/filesystem access.\n\n5) Carefully implement the behavior described in the docstring, including edge cases (e.g., empty lists/strings, single elements, negatives, duplicates). Ensure the return type and values match the description exactly.\n\n6) Prefer efficient solutions (time and space) when applicable:\n   - Rotation/cycle string problems: x is a rotation of y iff len(x) == len(y) and x is a substring of y + y. To check whether any rotation of b appears in a, either generate all rotations of b and test membership in a, or for each substring w of a with length len(b), test if w is a substring of b + b.\n   - Array rotation sorting checks: test whether the given array equals some rotation of the sorted array; include the zero-shift case if “any number of shifts” includes zero.\n   - Pair-sum-to-zero style problems: use a set to track seen elements for O(n) solutions when applicable.\n   - Recurrence-defined sequences: implement iteratively to avoid deep recursion; use O(1) or O(n) memory as appropriate.\n   - Sorting with tie-breaking by original position: rely on Python’s stable sort, or attach original indices via enumerate to avoid O(n^2) patterns like list.index inside the key function.\n   - Avoid mutating input arguments unless explicitly allowed; make a local copy if you need to sort or modify a sequence.\n\n7) Avoid unnecessary complexity. Use only standard Python. Do not add extraneous comments or output.\n\n8) Be robust to typical corner cases implied by the description. Examples:\n   - For digit-sum tasks, handle negatives via abs when summing digits.\n   - For problems involving numbers-as-words (“zero” to “nine”), map words to numbers for sorting and return the space-joined words in sorted order.\n   - For comparisons between numbers and strings representing real numbers (with '.' or ',' as decimal separators), parse strings for comparison but return the larger input in its original type/representation. Return None if values are equal as specified.\n\n9) Deliverable: a single, correct, complete Python function definition matching the Entry Point and signature, with no extra output. If and only if typing names appear in annotations, include the minimal from typing import ... line(s) immediately above the function."
+  }
+}

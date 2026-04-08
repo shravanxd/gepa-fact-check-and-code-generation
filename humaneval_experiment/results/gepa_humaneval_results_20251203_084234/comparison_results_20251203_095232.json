@@ -1,0 +1,31 @@
+{
+  "timestamp": "20251203_095232",
+  "test_size": 64,
+  "baseline": {
+    "pass_at_1": 0.796875,
+    "pass_at_3": 0.84375,
+    "pass_at_5": 0.859375,
+    "passed": 51,
+    "total": 64
+  },
+  "optimized": {
+    "pass_at_1": 1.0,
+    "pass_at_3": 1.0,
+    "pass_at_5": 1.0,
+    "passed": 64,
+    "total": 64,
+    "delta_absolute": 0.203125,
+    "delta_percent": 25.49019607843137,
+    "additional_problems_solved": 13
+  },
+  "summary": {
+    "seed_pass_at_1": "79.69%",
+    "seed_pass_at_3": "84.38%",
+    "seed_pass_at_5": "85.94%",
+    "optimized_pass_at_1": "100.00%",
+    "optimized_pass_at_3": "100.00%",
+    "optimized_pass_at_5": "100.00%",
+    "improvement": "+20.31%",
+    "verdict": "IMPROVED"
+  }
+}

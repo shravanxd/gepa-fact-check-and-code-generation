@@ -1,0 +1,222 @@
+{
+  "seed_results": [
+    {
+      "task_id": "HumanEval/29",
+      "entry_point": "filter_by_prefix",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'filter_by_prefix' not found in generated code",
+      "extracted_code": "return [s for s in strings if s.startswith(prefix)]"
+    },
+    {
+      "task_id": "HumanEval/84",
+      "entry_point": "solve",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'solve' not found in generated code",
+      "extracted_code": "total_sum = sum(int(d) for d in str(N))\n    return bin(total_sum)[2:]"
+    },
+    {
+      "task_id": "HumanEval/119",
+      "entry_point": "match_parens",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'match_parens' not found in generated code",
+      "extracted_code": "def is_good(s):\n        balance = 0\n        for char in s:\n            if char == '(':\n                balance += 1\n            else:\n                balance -= 1\n            if balance < 0:\n                return False\n        return balance == 0\n\n    if is_good(lst[0] + lst[1]) or is_good(lst[1] + lst[0]):\n        return 'Yes'\n    else:\n        return 'No'"
+    },
+    {
+      "task_id": "HumanEval/153",
+      "entry_point": "Strongest_Extension",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'Strongest_Extension' not found in generated code",
+      "extracted_code": "max_strength = None\n    strongest_extension = None\n    for ext in extensions:\n        cap = sum(1 for c in ext if c.isupper())\n        sm = sum(1 for c in ext if c.islower())\n        strength = cap - sm\n        if max_strength is None or strength > max_strength:\n            max_strength = strength\n            strongest_extension = ext\n    return f\"{class_name}.{strongest_extension}\""
+    },
+    {
+      "task_id": "HumanEval/90",
+      "entry_point": "next_smallest",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'next_smallest' not found in generated code",
+      "extracted_code": "unique_sorted = sorted(set(lst))\n    if len(unique_sorted) < 2:\n        return None\n    return unique_sorted[1]"
+    },
+    {
+      "task_id": "HumanEval/24",
+      "entry_point": "largest_divisor",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'largest_divisor' not found in generated code",
+      "extracted_code": "for i in range(n//2, 0, -1):\n        if n % i == 0:\n            return i\n    return 1"
+    },
+    {
+      "task_id": "HumanEval/73",
+      "entry_point": "smallest_change",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'smallest_change' not found in generated code",
+      "extracted_code": "changes = 0\n    n = len(arr)\n    for i in range(n // 2):\n        if arr[i] != arr[n - 1 - i]:\n            changes += 1\n    return changes"
+    },
+    {
+      "task_id": "HumanEval/46",
+      "entry_point": "fib4",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'fib4' not found in generated code",
+      "extracted_code": "if n == 0 or n == 1 or n == 3:\n        return 0\n    elif n == 2:\n        return 2\n    \n    a, b, c, d = 0, 0, 2, 0\n    for _ in range(4, n + 1):\n        e = a + b + c + d\n        a, b, c, d = b, c, d, e\n    return d"
+    },
+    {
+      "task_id": "HumanEval/79",
+      "entry_point": "decimal_to_binary",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'decimal_to_binary' not found in generated code",
+      "extracted_code": "return \"db\" + bin(decimal)[2:] + \"db\""
+    },
+    {
+      "task_id": "HumanEval/80",
+      "entry_point": "is_happy",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'is_happy' not found in generated code",
+      "extracted_code": "if len(s) < 3:\n        return False\n    for i in range(len(s) - 2):\n        if len({s[i], s[i+1], s[i+2]}) < 3:\n            return False\n    return True"
+    },
+    {
+      "task_id": "HumanEval/106",
+      "entry_point": "f",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "SyntaxError",
+      "error_message": "Line 7: unindent does not match any outer indentation level",
+      "extracted_code": "def factorial(x):\n        result = 1\n        for num in range(1, x + 1):\n            result *= num\n        return result\n\n    result = []\n    for i in range(1, n + 1):\n        if i % 2 == 0:\n            result.append(factorial(i))\n        else:\n            result.append(i * (i + 1) // 2)\n    return result"
+    },
+    {
+      "task_id": "HumanEval/37",
+      "entry_point": "sort_even",
+      "passed": false,
+      "score": 0.0,
+      "error_type": "MissingFunction",
+      "error_message": "Function 'sort_even' not found in generated code",
+      "extracted_code": "even_values = sorted(l[i] for i in range(0, len(l), 2))\n    result = l[:]\n    for idx, val in zip(range(0, len(l), 2), even_values):\n        result[idx] = val\n    return result"
+    }
+  ],
+  "optimized_results": [
+    {
+      "task_id": "HumanEval/29",
+      "entry_point": "filter_by_prefix",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "from typing import List\n\n\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that start with a given prefix.\n    >>> filter_by_prefix([], 'a')\n    []\n    >>> filter_by_prefix(['abc', 'bcd', 'cde', 'array'], 'a')\n    ['abc', 'array']\n    \"\"\"\n    return [s for s in strings if s.startswith(prefix)]"
+    },
+    {
+      "task_id": "HumanEval/84",
+      "entry_point": "solve",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    s = sum(int(d) fo"
+    },
+    {
+      "task_id": "HumanEval/119",
+      "entry_point": "match_parens",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def match_parens(lst):\n    '''\n    You are given a list of two strings, both strings consist of open\n    parentheses '(' or close parentheses ')' only.\n    Your job is to check if it is possible to concatenate the two strings in\n    some order, that the resulting string will be good.\n    A string S is considered to be good if and only if all parentheses in S\n    are balanced. For example: the string '(())()' is good, while the string\n    '())' is not.\n    Return 'Yes' if there's a way to make a "
+    },
+    {
+      "task_id": "HumanEval/153",
+      "entry_point": "Strongest_Extension",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def Strongest_Extension(class_name, extensions):\n    \"\"\"You will be given the name of a class (a string) and a list of extensions.\n    The extensions are to be used to load additional classes to the class. The\n    strength of the extension is as follows: Let CAP be the number of the uppercase\n    letters in the extension's name, and let SM be the number of lowercase letters \n    in the extension's name, the strength is given by the fraction CAP - SM. \n    You should find the strongest extension "
+    },
+    {
+      "task_id": "HumanEval/90",
+      "entry_point": "next_smallest",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def next_smallest(lst):\n    \"\"\"\n    You are given a list of integers.\n    Write a function next_smallest() that returns the 2nd smallest element of the list.\n    Return None if there is no such element.\n    \n    next_smallest([1, 2, 3, 4, 5]) == 2\n    next_smallest([5, 1, 4, 3, 2]) == 2\n    next_smallest([]) == None\n    next_smallest([1, 1]) == None\n    \"\"\"\n    unique_vals = set(lst)\n    if len(unique_vals) < 2:\n        return None\n    sorted_vals = sorted(unique_vals)\n    return sorted_vals[1]"
+    },
+    {
+      "task_id": "HumanEval/24",
+      "entry_point": "largest_divisor",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n    if n <= 1:\n        return None\n    for i in range(n // 2, 0, -1):\n        if n % i == 0:\n            return i\n    return None"
+    },
+    {
+      "task_id": "HumanEval/73",
+      "entry_point": "smallest_change",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def smallest_change(arr):\n    \"\"\"\n    Given an array arr of integers, find the minimum number of elements that\n    need to be changed to make the array palindromic. A palindromic array is an array that\n    is read the same backwards and forwards. In one change, you can change one element to any other element.\n\n    For example:\n    smallest_change([1,2,3,5,4,7,9,6]) == 4\n    smallest_change([1, 2, 3, 4, 3, 2, 2]) == 1\n    smallest_change([1, 2, 3, 2, 1]) == 0\n    \"\"\"\n    n = len(arr)\n    changes "
+    },
+    {
+      "task_id": "HumanEval/46",
+      "entry_point": "fib4",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def fib4(n: int):\n    \"\"\"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\n    fib4(0) -> 0\n    fib4(1) -> 0\n    fib4(2) -> 2\n    fib4(3) -> 0\n    fib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).\n    Please write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.\n    >>> fib4(5)\n    4\n    >>> fib4(6)\n    8\n    >>> fib4(7)\n    14\n    \"\"\"\n    if n == 0:\n        return 0\n    elif n == 1:\n"
+    },
+    {
+      "task_id": "HumanEval/79",
+      "entry_point": "decimal_to_binary",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def decimal_to_binary(decimal):\n    \"\"\"You will be given a number in decimal form and your task is to convert it to\n    binary format. The function should return a string, with each character representing a binary\n    number. Each character in the string will be '0' or '1'.\n\n    There will be an extra couple of characters 'db' at the beginning and at the end of the string.\n    The extra characters are there to help with the format.\n\n    Examples:\n    decimal_to_binary(15)   # returns \"db1111db\"\n"
+    },
+    {
+      "task_id": "HumanEval/80",
+      "entry_point": "is_happy",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def is_happy(s: str) -> bool:\n    \"\"\"You are given a string s.\n    Your task is to check if the string is happy or not.\n    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct\n    For example:\n    is_happy(a) => False\n    is_happy(aa) => False\n    is_happy(abcd) => True\n    is_happy(aabb) => False\n    is_happy(adb) => True\n    is_happy(xyy) => False\n    \"\"\"\n    if len(s) < 3:\n        return False\n    for i in range(len(s) - 2):\n        triplet = s[i:i+3]\n  "
+    },
+    {
+      "task_id": "HumanEval/106",
+      "entry_point": "f",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def f(n):\n    \"\"\" Implement the function f that takes n as a parameter,\n    and returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\n    or the sum of numbers from 1 to i otherwise.\n    i starts from 1.\n    the factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n    Example:\n    f(5) == [1, 2, 6, 24, 15]\n    \"\"\"\n    result = []\n    factorial = 1\n    for i in range(1, n + 1):\n        if i % 2 == 0:\n            fa"
+    },
+    {
+      "task_id": "HumanEval/37",
+      "entry_point": "sort_even",
+      "passed": true,
+      "score": 1.0,
+      "error_type": null,
+      "error_message": null,
+      "extracted_code": "def sort_even(l: list):\n    \"\"\"This function takes a list l and returns a list l' such that\n    l' is identical to l in the odd indicies, while its values at the even indicies are equal\n    to the values of the even indicies of l, but sorted.\n    >>> sort_even([1, 2, 3])\n    [1, 2, 3]\n    >>> sort_even([5, 6, 3, 4])\n    [3, 6, 5, 4]\n    \"\"\"\n    even_indices = [i for i in range(0, len(l), 2)]\n    even_values = sorted(l[i] for i in even_indices)\n    res = l[:]\n    for idx, val in zip(even_indices,"
+    }
+  ]
+}

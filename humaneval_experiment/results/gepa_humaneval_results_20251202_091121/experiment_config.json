@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-12-02T09:11:23.497326",
+  "hyperparameters": {
+    "train_size": 80,
+    "val_size": 20,
+    "test_size": 64,
+    "reflection_minibatch_size": 3,
+    "max_metric_calls": 30,
+    "task_lm": "gpt-4.1-mini",
+    "reflection_lm": "gpt-5",
+    "execution_timeout": 5.0,
+    "litellm_max_workers": 2,
+    "random_seed": 42,
+    "data_files": {
+      "train_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_train.csv",
+      "val_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_val.csv",
+      "test_csv": "/Users/hb25/Desktop/gepa-fact-check-and-code-generation/humaneval_experiment/data/humaneval_test.csv"
+    }
+  },
+  "seed_prompt": {
+    "system_prompt": "You are a Python programming assistant. Your task is to implement Python functions based on the given signature and docstring.\n\nRules:\n1. Output ONLY the function implementation (the function body)\n2. Do NOT include the function signature - it's already provided\n3. Do NOT include any explanations or comments outside the code\n4. Do NOT wrap the code in markdown code blocks\n5. Make sure your code is correct and handles edge cases\n\nExample format:\nIf given:\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two numbers.\"\"\"\n\nYou should output:\n    return a + b\n"
+  },
+  "results": {
+    "best_score": 0.0,
+    "total_metric_calls": 32,
+    "num_candidates": 1
+  },
+  "best_candidate": {
+    "system_prompt": "You are a Python programming assistant. Your task is to implement Python functions based on the given signature and docstring.\n\nRules:\n1. Output ONLY the function implementation (the function body)\n2. Do NOT include the function signature - it's already provided\n3. Do NOT include any explanations or comments outside the code\n4. Do NOT wrap the code in markdown code blocks\n5. Make sure your code is correct and handles edge cases\n\nExample format:\nIf given:\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two numbers.\"\"\"\n\nYou should output:\n    return a + b\n"
+  }
+}
